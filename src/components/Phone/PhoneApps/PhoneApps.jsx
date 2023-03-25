@@ -17,19 +17,16 @@ const PhoneApps = () => {
   const phoneRef = useRef()
 
   const slowNavigate = (app) => {
-    console.log(app)
     if(app.src !== undefined) {
-      const newPathName = app.src.split("/")[app.src.split("/").length - 1]
+      // const newPathName = app.src.split("/")[app.src.split("/").length - 1]
+      const newPathName = app.src.split(".png").toString().split("/")[app.src.split(".png").toString().split("/").length - 1].split("-")[0]
       phoneRef.current.style.animation = "appClicked 2s ease"
       setTimeout(() => {
         phoneRef.current.style.display = "none"
       }, 1900)
       setTimeout(() => {
-        console.log(newPathName)
-        console.log(`/${newPathName.split(".png").join("")}`)
+
         navigate(`/${newPathName.split(".png").join("")}`)
-        console.log(phoneRef.current)
-        console.log(phoneRef.current.style)
         if(phoneRef.current !== "null") {
           setTimeout(() => {
             phoneRef.current.style.display = "flex"
