@@ -25,11 +25,15 @@ const PhoneApps = () => {
       }, 1900)
       setTimeout(() => {
         navigate(`/${newPathName.split(".png").join("")}`)
-        setTimeout(() => {
-          phoneRef.current.style.display = "flex"
-          phoneRef.current.style.animation = ""
-          // phoneRef.current.style.scale = 1
-        }, 500)
+        console.log(phoneRef.current)
+        console.log(phoneRef.current.style)
+        if(phoneRef.current !== "null") {
+          setTimeout(() => {
+            phoneRef.current.style.display = "flex"
+            phoneRef.current.style.animation = ""
+            
+          }, 500)
+        }
       }, 2000)
     }
   }
