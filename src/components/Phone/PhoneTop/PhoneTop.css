@@ -1,0 +1,31 @@
+.phone-inside-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phone-clock {
+  font-weight: 700;
+  font-size: .8em;
+  margin-left: 2.5em;
+  margin-top: .4em;
+  color: #FFFDD0;
+  cursor: context-menu;
+  user-select: none;
+}
+
+.phone-itens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.phone-itens svg {
+  margin-right: .2em;
+  font-size: 1.2em;
+  color: #FFFDD0;
+}
+
+.phone-itens svg:nth-child(1) {
+  font-size: 1em;
+}

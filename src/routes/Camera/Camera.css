@@ -1,0 +1,185 @@
+.camera-container {
+  height: 43.2em;
+  background-color: #000;
+}
+
+.gallery-container {
+  position: absolute;
+  background: #000;
+  z-index: 11;
+  width: 23em;
+  height: 43.2em;
+  border-radius: 2em;
+  display: none;
+}
+
+.camera-app {
+  display: flex;
+  flex-direction: column;
+  height: 43.2em;
+}
+
+.camera-app span {
+  color: #fff;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.camera-app span:hover {
+  color: #ccc;
+}
+
+.camera-app-top,
+.camera-app-main,
+.camera-app-center,
+.camera-app-bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.camera-app-top {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-size: 1.3em;
+}
+
+.camera-app-top span:nth-child(1) {
+  transform: rotateZ(357deg);
+}
+
+.camera-app-top span:nth-child(4) {
+  filter: sepia(100%) brightness(200%);
+}
+
+.camera-app-top span:nth-child(1)::after,
+.camera-app-top span:nth-child(2)::after,
+.camera-app-top span:nth-child(3)::after,
+.camera-app-top span:nth-child(4)::after {
+  content: '/';
+  position: absolute;
+  color: #ccc;
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+  transform: rotateZ(145deg);
+  display: none;
+}
+
+.camera-app-top span:nth-child(1)::after {
+  left: -0.35em;
+  top: 0.5em;
+}
+
+.camera-app-top span:nth-child(2)::after {
+  left: 6em;
+  top: 1.5em;
+}
+
+.camera-app-top span:nth-child(3)::after {
+  left: 10.3em;
+  top: 1.5em;
+}
+
+.camera-app-top span:nth-child(4)::after {
+  left: 0em;
+  top: 0.6em;
+}
+
+.camera-app-main {
+  height: 28em;
+  margin-bottom: 1em;
+  position: relative;
+  transition: .5s ease-in-out;
+}
+
+#video {
+  position: absolute;
+  object-fit: fill;
+  width: 23.006em;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  position: absolute;
+  display: none;
+}
+
+.camera-app-center {
+  margin-bottom: 3em;
+}
+
+.camera-app-center span {
+  border-bottom: 1px solid transparent;
+}
+
+#camera-app-active {
+  border-bottom: 1px solid #fff;
+}
+
+#camera-app-active:hover {
+  border-bottom: 1px solid #ccc;
+}
+
+.gallery-button {
+  z-index: 11;
+}
+
+.gallery-button,
+.reverse-button {
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  background-color: #535353;
+  margin-top: -.5em;
+}
+
+.gallery-button img {
+  width: 2.5em;
+  margin-left: 0.25em;
+  margin-top: 0.25em;
+  filter: invert(100%) sepia(26%) saturate(143%) hue-rotate(218deg) brightness(105%) contrast(102%);
+}
+
+.gallery-button img:hover {
+  filter: invert(75%) sepia(39%) saturate(2%) hue-rotate(55deg) brightness(100%) contrast(94%);
+}
+
+.photo-button {
+  position: absolute;
+  top: 37em;
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 50%;
+  z-index: 10;
+  background-color: #535353;
+  cursor: pointer;
+}
+
+.photo-button::after {
+  content: '';
+  background-color: #fff;
+  position: absolute;
+  top: 0.39em;
+  left: 0.39em;
+  width: 3.7em;
+  height: 3.7em;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.photo-button:hover {
+  scale: 1.1;
+}
+
+.reverse-button {
+  margin-left: 6em;
+}
+
+.reverse-button svg {
+  font-size: 2.2em;
+  margin-top: 0.15em;
+  margin-left: 0.2em;
+  transform: rotateZ(90deg);
+}

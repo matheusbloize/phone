@@ -1,0 +1,28 @@
+.phone-top-bar {
+  position: absolute;
+  background-color: #242424;
+  width: 12em;
+  height: 2em;
+  top: .5em;
+  border-bottom-left-radius: .5em;
+  border-bottom-right-radius: .5em;
+  display: flex;
+  align-items: center;
+}
+
+.phone-top-speaker {
+  background-color: #525252;
+  width: 3.5em;
+  height: .5em;
+  border-radius: 1em;
+  margin-left: 4em;
+}
+
+.phone-top-camera {
+  background-image: url("../../../assets/images/lens.png");
+  background-size: cover;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin-left: .5em;
+}

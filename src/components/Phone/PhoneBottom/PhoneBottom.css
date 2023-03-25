@@ -1,0 +1,34 @@
+.phone-inside-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-links-area {
+  background: #e2e2e21a;
+  display: flex;
+  width: 21em;
+  height: 4em;
+  border-radius: 1em;
+}
+
+.phone-links-area a {
+  margin-left: 1em;
+  margin-right: 4em;
+  margin-top: .5em;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.phone-link {
+  width: 3em;
+  -webkit-user-drag: none;
+}
+
+.phone-link:active {
+  scale: 1.05;
+}

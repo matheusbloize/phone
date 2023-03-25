@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #FFFDD0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.swiper-pagination-bullet {
+  background-color: #FFFDD0;
+}
+
+.easter-egg {
+  background-image: url("../src/assets/images/easteregg.png");
+  background-size: cover;
+  width: 6em;
+  height: 6em;
+  position: absolute;
+  top: 8em;
+  left: 15em;
+  opacity: 0;
+}
+
+.easter-egg:hover {
+  opacity: .03;
+}
+
+.app-main-page {
+  height: 43.1em;
+  width: 23em;
+  position: absolute;
+  top: 1em;
+  left: 1.01em;
+  z-index: 5;
+  border-radius: 2em;
+}
+
+.phone-top-bar-app.phone-top-bar {
+  left: 5.5em;
+  top: -.5em;
+}
+
+.phone-clock-app.phone-clock {
+  margin-top: .65em;
+}

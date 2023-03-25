@@ -1,0 +1,97 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone {
+  background-color: #242424;
+  width: 25em;
+  height: 45em;
+  margin-top: 5vh;
+  border-radius: 2.5em;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.phone-inside-container {
+  /* background-image: url("../src/assets/images/gargantua.jpg");
+  background-size: cover;
+  background-position: right; */
+  /* background-image: url("https://i.pinimg.com/originals/5d/a8/e3/5da8e3b5a0ddfd9aff9277d494bef010.jpg");
+  background-size: cover;
+  background-position: center; */
+  /* background-image: url("https://media1.popsugar-assets.com/files/thumbor/-Hw_8s42nZxSC65rDGpzyMzA_cA/0x600:2401x3001/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2022/01/04/686/n/1922507/6023a31161d467cac500f9.25034761_/i/how-to-do-planet-iphone-wallpaper-trend-tiktok.jpg"); */
+  background-image: url("https://images.unsplash.com/photo-1540122995631-7c74c671ff8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80");
+  background-size: cover;
+  background-position: right;
+  width: 23em;
+  height: 43em;
+  margin-top: 2vh;
+  border-radius: 2em;
+}
+
+@keyframes appClicked {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.5;
+  }
+  100% {
+    scale: 2.5;
+  }
+}
+
+@keyframes returnHome {
+  0% {scale: 1;}
+  10%{scale: .9}
+  20%{scale: .8}
+  30%{scale: .7}
+  40%{scale: .6}
+  50%{scale: .5}
+  60%{scale: .4}
+  70%{scale: .3}
+  80%{scale: .2}
+  90%{scale: .1}
+  100%{scale: 0}
+}
+
+.return-button {
+  position: absolute;
+  top: 34em;
+  left: 20em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  z-index: 10;
+  background-color: #242424;
+  cursor: pointer;
+}
+
+.return-button::before {
+  content: '';
+  background-color: #fff;
+  position: absolute;
+  top: 0.65em;
+  left: 0.65em;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.return-button::after {
+  content: '';
+  background-color: #535353;
+  position: absolute;
+  top: 0.4em;
+  left: 0.389em;
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+}
