@@ -17,6 +17,7 @@ const PhoneApps = () => {
   const phoneRef = useRef()
 
   const slowNavigate = (app) => {
+    console.log(app)
     if(app.src !== undefined) {
       const newPathName = app.src.split("/")[app.src.split("/").length - 1]
       phoneRef.current.style.animation = "appClicked 2s ease"
@@ -24,6 +25,8 @@ const PhoneApps = () => {
         phoneRef.current.style.display = "none"
       }, 1900)
       setTimeout(() => {
+        console.log(newPathName)
+        console.log(`/${newPathName.split(".png").join("")}`)
         navigate(`/${newPathName.split(".png").join("")}`)
         console.log(phoneRef.current)
         console.log(phoneRef.current.style)
