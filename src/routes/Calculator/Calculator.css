@@ -28,11 +28,10 @@
 
 .calculator-app-result {
   height: 4.6em;
-  margin-left: 8em;
   font-size: 2em;
   font-weight: 700;
   display: flex;
-  justify-content: center;
+  justify-content: end;
 }
 
 .calculator-app-keys {
@@ -42,7 +41,7 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-.calculator-app-keys span {
+.calculator-app-keys div {
   display: flex;
   justify-content: center;
   align-items: center;

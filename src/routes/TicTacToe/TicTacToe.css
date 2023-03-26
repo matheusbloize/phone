@@ -1,0 +1,74 @@
+.tictactoe-container {
+  background-color: #90928f;
+}
+
+.tictactoe-container h2 {
+  margin-top: 1.5em;
+  font-size: 3em;
+  font-weight: 100;
+  margin-left: 1.2em;
+}
+
+.tictactoe-app {
+  background-color: #ccc;
+  width: 19em;
+  margin-top: 2em;
+  margin-left: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tictactoe-area {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  font-weight: bold;
+  color: #222;
+  cursor: pointer
+}
+
+.bottom {
+  border-bottom: 1px solid #222;
+}
+
+.right {
+  border-right: 1px solid #222;
+}
+
+.tictactoe-turn {
+  margin-left: 8.5em;
+  margin-top: 2em;
+}
+
+.tictactoe-turn button {
+  padding: .5em 2em;
+  cursor: pointer;
+  transition: .2s ease;
+  color: #90928f;
+  font-weight: 700;
+  border: 1px solid #778be6;
+  background-color: #5a67a3;
+}
+
+.tictactoe-turn button:hover {
+  color: #222;
+  background-color: #d197cb;
+  border: 1px solid #ffb8f8;
+}
+
+.tictactoe-winner {
+  margin-left: 2.5em;
+  margin-top: 1em;
+  font-size: 2em;
+  font-weight: 700;
+  color: #ffffee;
+  display: none;
+}
+
+
+
+/* background-color: #5a67a3;
+background-color: #d197cb; */

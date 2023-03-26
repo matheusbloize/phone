@@ -19,20 +19,13 @@
 }
 
 .phone-inside-container {
-  /* background-image: url("../src/assets/images/gargantua.jpg");
-  background-size: cover;
-  background-position: right; */
-  /* background-image: url("https://i.pinimg.com/originals/5d/a8/e3/5da8e3b5a0ddfd9aff9277d494bef010.jpg");
-  background-size: cover;
-  background-position: center; */
-  /* background-image: url("https://media1.popsugar-assets.com/files/thumbor/-Hw_8s42nZxSC65rDGpzyMzA_cA/0x600:2401x3001/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2022/01/04/686/n/1922507/6023a31161d467cac500f9.25034761_/i/how-to-do-planet-iphone-wallpaper-trend-tiktok.jpg"); */
   background-image: url("https://images.unsplash.com/photo-1540122995631-7c74c671ff8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80");
   background-size: cover;
-  background-position: right;
   width: 23em;
   height: 43em;
   margin-top: 2vh;
   border-radius: 2em;
+  transition: .5s ease;
 }
 
 @keyframes appClicked {

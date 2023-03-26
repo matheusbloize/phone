@@ -9,7 +9,7 @@ import PhoneBottom from './components/Phone/PhoneBottom/PhoneBottom'
 
 // Hooks
 import { useNavigate, Outlet } from 'react-router-dom'
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 
 function App() {
   const navigate = useNavigate()
@@ -27,6 +27,19 @@ function App() {
       }, 500)
     }, 1000)
   }
+
+  // console.log(document.querySelector("background-id"))
+  // setTimeout(() => {
+  //   const testeMassa = (document.querySelector(".swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal"))
+  //   console.log(testeMassa)
+  //   if (testeMassa.children[0].classList.contains("swiper-pagination-bullet-active")) {
+  //     document.body.children[0].children[0].children[0].children[1].style.backgroundPosition = "0%"
+  //   } else if (testeMassa.children[1].classList.contains("swiper-pagination-bullet-active")) {
+  //     document.body.children[0].children[0].children[0].children[1].style.backgroundPosition = "50%"
+  //   } else if (testeMassa.children[2].classList.contains("swiper-pagination-bullet-active")) {
+  //     document.body.children[0].children[0].children[0].children[1].style.backgroundPosition = "100%"
+  //   }
+  // }, 2000)
 
   return (
     <div className="App">

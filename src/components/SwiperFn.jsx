@@ -8,6 +8,9 @@ import { Pagination } from "swiper";
 import PhoneApps from "./Phone/PhoneApps/PhoneApps";
 
 function SwiperFn() {
+
+
+
   return (
     <>
       <Swiper allowTouchMove={true} pagination={{ clickable: true }} modules={[Pagination]} className="mySwiper">
@@ -15,10 +18,10 @@ function SwiperFn() {
           <PhoneApps />
         </SwiperSlide>
         <SwiperSlide>
-          <div className="phone-inside-center"></div>
+          <div className="phone-inside-center" background-id="2"></div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="phone-inside-center">
+          <div className="phone-inside-center" background-id="3">
             <a className="easter-egg" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"></a>
           </div>
         </SwiperSlide>

@@ -11,7 +11,7 @@ import Todo from './routes/Todo/Todo'
 import Calculator from './routes/Calculator/Calculator'
 import Exchange from './routes/Exchange/Exchange'
 import Settings from './routes/Settings/Settings'
-import Animals from './routes/Animals/Animals'
+import TicTacToe from './routes/TicTacToe/TicTacToe'
 import Clock from './routes/Clock/Clock'
 
 const router = createBrowserRouter([
@@ -45,8 +45,8 @@ const router = createBrowserRouter([
         element: <Settings />
       },
       {
-        path: "/animals",
-        element: <Animals />
+        path: "/tictactoe",
+        element: <TicTacToe />
       },
       {
         path: "/clock",

@@ -14,6 +14,7 @@ const Camera = () => {
   const canvasRef = useRef()
   const videoRef = useRef()
   const galleryRef = useRef()
+  const galleryButtonRef = useRef()
 
   useEffect(() => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -58,6 +59,22 @@ const Camera = () => {
   }
 
   const takePhoto = () => {
+    videoRef.current.style.filter = "brightness(200%)"
+    videoRef.current.style.top = "33.6em"
+    videoRef.current.style.left = "4.14em"
+    videoRef.current.style.width = "2em"
+    videoRef.current.style.height = "2em"
+    setTimeout(() => {
+      videoRef.current.style.filter = "brightness(100%)"
+      videoRef.current.style.top = "0"
+      videoRef.current.style.left = "0"
+      videoRef.current.style.width = "100%"
+      videoRef.current.style.height = "100%"
+      galleryButtonRef.current.style.scale = 2
+      setTimeout(() => {
+        galleryButtonRef.current.style.scale = 1
+      }, 500)
+    }, 1000)
     canvasRef.current.height = videoRef.current.videoHeight
     canvasRef.current.width = videoRef.current.videoWidth
     let context = canvasRef.current.getContext("2d")
@@ -96,7 +113,7 @@ const Camera = () => {
           <span id="4">⭐</span>
         </div>
         <div ref={mainPhotoRef} id="normal" className="camera-app-main">
-          <video ref={videoRef} id="video"  height="100%" width="100%"></video>
+          <video ref={videoRef} id="video" height="100%" width="100%"></video>
           <canvas ref={canvasRef} id="canvas" height="100%" width="100%"></canvas>
         </div>
         <div ref={divTypesRef} onClick={(e) => changeActiveClass(e.target)} className="camera-app-center">
@@ -107,7 +124,7 @@ const Camera = () => {
           <p>.....</p>
         </div>
         <div className="camera-app-bottom">
-          <span onClick={getImage} className="gallery-button"><img src={gallery} alt="Gallery" /></span>
+          <span onClick={getImage} ref={galleryButtonRef} className="gallery-button"><img src={gallery} alt="Gallery" /></span>
           <span onClick={takePhoto} className="photo-button"></span>
           <span onClick={getMeme} className="reverse-button"><TiArrowSync /></span>
         </div>
