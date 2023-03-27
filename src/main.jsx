@@ -13,6 +13,8 @@ import Exchange from './routes/Exchange/Exchange'
 import Settings from './routes/Settings/Settings'
 import TicTacToe from './routes/TicTacToe/TicTacToe'
 import Clock from './routes/Clock/Clock'
+import { ModeProvider } from './context/ModeContext'
+import { BackgroundImageProvider } from './context/BackgroundImageContext'
 
 const router = createBrowserRouter([
   {
@@ -57,7 +59,11 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router}>
-    <App />
-  </RouterProvider>
+  <ModeProvider>
+    <BackgroundImageProvider>
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
+    </BackgroundImageProvider>
+  </ModeProvider>
 )

@@ -5,6 +5,8 @@ import staring_cat from "../../assets/images/staring_cat.png"
 
 // Components
 import { TiArrowSync } from "react-icons/ti"
+
+// Hooks
 import { useRef, useEffect } from "react"
 
 const Camera = () => {
@@ -70,11 +72,7 @@ const Camera = () => {
       videoRef.current.style.left = "0"
       videoRef.current.style.width = "100%"
       videoRef.current.style.height = "100%"
-      galleryButtonRef.current.style.scale = 2
-      setTimeout(() => {
-        galleryButtonRef.current.style.scale = 1
-      }, 500)
-    }, 1000)
+    }, 500)
     canvasRef.current.height = videoRef.current.videoHeight
     canvasRef.current.width = videoRef.current.videoWidth
     let context = canvasRef.current.getContext("2d")

@@ -89,16 +89,15 @@
   height: 28em;
   margin-bottom: 1em;
   position: relative;
-  transition: .5s ease-in-out;
 }
 
 #video {
   position: absolute;
   object-fit: fill;
-  z-index: 10;
+  z-index: 12;
   top: 0em;
   left: 0em;
-  transition: 1s ease-in-out;
+  transition: .5s ease-in-out;
 }
 
 #canvas {

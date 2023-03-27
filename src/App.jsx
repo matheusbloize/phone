@@ -16,16 +16,18 @@ function App() {
   const buttonRef = useRef()
 
   const returnHome = () => {
-    buttonRef.current.children[1].style.animation = "returnHome 1s ease-in"
-    setTimeout(() => {
-      buttonRef.current.children[1].style.display = "none"
-    }, 950)
-    setTimeout(() => {
-      navigate("/")
+    if(location.pathname !== "/") {
+      buttonRef.current.children[1].style.animation = "returnHome 1s ease-in"
       setTimeout(() => {
-        buttonRef.current.children[1].style.animation = ""
-      }, 500)
-    }, 1000)
+        buttonRef.current.children[1].style.display = "none"
+      }, 950)
+      setTimeout(() => {
+        navigate("/")
+        setTimeout(() => {
+          buttonRef.current.children[1].style.animation = ""
+        }, 500)
+      }, 1000)
+    }
   }
 
   // console.log(document.querySelector("background-id"))

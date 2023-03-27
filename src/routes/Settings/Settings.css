@@ -1,3 +1,89 @@
 .settings-container {
-  background-color: blue;
+  background-color: #ffffde;
+}
+
+.settings-container .phone-clock {
+  color: #333;
+}
+
+.settings-container .phone-itens svg {
+  color: #333;
+}
+
+.settings-container h2 {
+  margin-top: 1.5em;
+  font-size: 3em;
+  font-weight: 100;
+  margin-left: 1.8em;
+}
+
+.settings-app {
+  font-weight: 700;
+  color: #333;
+  margin-left: .5em;
+}
+
+.settings-app p {
+  font-size: 1.5em;
+}
+
+.settings-app-bg,
+.settings-app-mode {
+  margin-bottom: 1em;
+}
+
+.background-options {
+  height: 12em;
+  display: flex;
+}
+
+.background-options img {
+  margin-right: .1em;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+.background-options .bg-selected {
+  cursor: no-drop;
+  border: 3px solid #000;
+}
+
+.mode {
+  width: 7.5em;
+  height: 3em;
+  border-radius: 1.6em;
+  background-color: #ccc;
+  margin-left: 8em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.mode .ball {
+  background-color: #1a61db;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  left: 5.8em;
+  transition: .5s ease-in;
+}
+
+.mode .dark,
+.mode .light {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+.mode .dark{
+  background-color: #000;
+  margin-left: .2em;
+}
+
+.mode .light {
+  background-color: #fff;
+  margin-right: .2em;
 }

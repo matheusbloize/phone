@@ -4,6 +4,8 @@ import "./TicTacToe.css"
 // Components
 import PhoneTop from "../../components/Phone/PhoneTop/PhoneTop"
 import PhoneTopBar from "../../components/Phone/PhoneTopBar/PhoneTopBar"
+
+// Hooks
 import { useState } from "react"
 
 const TicTacToe = () => {

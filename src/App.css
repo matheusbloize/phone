@@ -19,7 +19,7 @@
 }
 
 .phone-inside-container {
-  background-image: url("https://images.unsplash.com/photo-1540122995631-7c74c671ff8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80");
+  background-image: url("../src/assets/images/background1.jpg");
   background-size: cover;
   width: 23em;
   height: 43em;
@@ -29,15 +29,10 @@
 }
 
 @keyframes appClicked {
-  0% {
-    scale: 1;
-  }
-  50% {
-    scale: 1.5;
-  }
-  100% {
-    scale: 2.5;
-  }
+  0% {scale: 1}
+  50%{scale: .5}
+  75%{scale: 1}
+  100%{scale: 2.5}
 }
 
 @keyframes returnHome {

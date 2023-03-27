@@ -6,6 +6,8 @@ import humidityImg from "../../assets/images/humidity.png"
 // Components
 import PhoneTop from "../../components/Phone/PhoneTop/PhoneTop"
 import PhoneTopBar from "../../components/Phone/PhoneTopBar/PhoneTopBar"
+
+// Hooks
 import { useState, useRef } from "react"
 
 const URL = import.meta.env.VITE_API_KEY
@@ -34,7 +36,6 @@ const Weather = () => {
     const res = await fetch(`${apiURL}${city}&appid=${URL}&units=metric&lang=pt_br`)
     const data = await res.json()
 
-    console.log(data)
     try {
       setCityInput("")
       setCity(data.name)

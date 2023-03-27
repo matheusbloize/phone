@@ -4,54 +4,77 @@ import "./Calculator.css"
 // Components
 import PhoneTop from "../../components/Phone/PhoneTop/PhoneTop"
 import PhoneTopBar from "../../components/Phone/PhoneTopBar/PhoneTopBar"
+
+// Hooks
 import { useRef, useState } from "react"
 
 const Calculator = () => {
-  const [result, setResult] = useState()
+  const [view, setView] = useState("")
   const [num1, setNum1] = useState()
   const [num2, setNum2] = useState()
+  const [prop, setProp] = useState()
   const keysRef = useRef()
   const resultRef = useRef()
 
   const keyCliked = (e) => {
-    if(e.getAttribute("calc-number") === "true" && num1 == undefined) {
-      setNum1(parseFloat(e.innerText))
-      console.log(num1)
-      setResult(e.innerText)
+    if (e.className !== "calculator-app-keys") {
+      if (e.innerText === "C") {
+        setView("")
+        setNum1()
+        setNum2()
+        setProp()
+      }
+      // if (e.innerText === "↵") {
+      //   console.log("foi")
+      //   let newNum1 = num1.toString().split("")
+      //   let removeLastNumber = newNum1.pop()
+      //   if ((num1 !== undefined && prop === undefined)) {
+      //     setView(newNum1)
+      //     setTimeout(() => {
+      //       newNum1 = ""
+      //       removeLastNumber = ""
+      //     }, 1000)
+      //   }
+      // }
+      if (num1 === undefined && e.getAttribute("calc-number") === "true") {
+        setNum1(e.innerText)
+        setView(e.innerText)
+      }
+      if (num1 !== undefined && e.getAttribute("calc-number") === "true" && prop === undefined) {
+        setNum1(num1 + e.innerText)
+        setView(num1 + e.innerText)
+      }
+      if (prop === undefined && e.getAttribute("calc-prop") === "true" && num1 !== undefined) {
+        setProp(e.innerText)
+        setView(e.innerText)
+      }
+      if (num1 !== undefined && prop !== undefined && num2 === undefined && e.getAttribute("calc-number") === "true") {
+        setNum2(e.innerText)
+        setView(e.innerText)
+      }
+      if (num2 !== undefined && e.getAttribute("calc-number") === "true" && prop !== undefined) {
+        setNum2(num2 + e.innerText)
+        setView(num2 + e.innerText)
+      }
+      if (num1 !== undefined && prop !== undefined && num2 !== undefined && e.innerText === "=") {
+        switch (prop) {
+          case "+":
+            setView(parseFloat(num1) + parseFloat(num2))
+            break
+          case "-":
+            setView(parseFloat(num1) - parseFloat(num2))
+            break
+          case "x":
+            setView(parseFloat(num1) * parseFloat(num2))
+            break
+          case "/":
+            setView(parseFloat(num1) / parseFloat(num2))
+            break
+          default:
+            break
+        }
+      }
     }
-    if(e.getAttribute("calc-prop") === "true") {
-      console.log(num1, e)
-    }
-    if(e.getAttribute("calc-number") === "true" && num1 !== undefined) {
-      console.log(num2)
-      setNum2(parseFloat(e.innerText))
-      setResult(e.innerText)
-    }
-    if (e.innerText === "=") {
-      setResult("")
-      console.log(num1)
-      console.log(num2)
-      console.log(typeof num1)
-      console.log(typeof num2)
-      setResult(num1 + num2)
-      console.log(result)
-    }
-    // if(e.getAttribute("calc-number") !== null) {
-    //   if(num1 === undefined) {
-    //     setNum1(e)
-    //   }
-    //   if()
-    // }
-    // console.log(e.getAttribute("calc-number"))
-    
-    if (e.innerText === "C") {
-      setNum1()
-      setNum2()
-      setResult("")
-    } else if (result) {
-      setResult(result + e.innerText)
-    }
-
   }
 
   return (
@@ -61,7 +84,7 @@ const Calculator = () => {
       <h2>Calculator</h2>
       <div className="calculator-app">
         <div ref={resultRef} className="calculator-app-result">
-          {result}
+          {view}
         </div>
         <div ref={keysRef} onClick={(e) => keyCliked(e.target)} className="calculator-app-keys">
           <div>C</div>

@@ -18,6 +18,7 @@ const PhoneApps = () => {
   const phoneRef = useRef()
 
   const slowNavigate = (app) => {
+    document.querySelector(".return-button").style.display = "none"
     if(app.src !== undefined) {
       let newPathName
       if(location.hostname === "localhost") {
@@ -30,13 +31,12 @@ const PhoneApps = () => {
         phoneRef.current.style.display = "none"
       }, 1900)
       setTimeout(() => {
-
         navigate(`/${newPathName.split(".png").join("")}`)
+        document.querySelector(".return-button").style.display = "block"
         if(phoneRef.current !== "null") {
           setTimeout(() => {
             phoneRef.current.style.display = "flex"
             phoneRef.current.style.animation = ""
-            
           }, 500)
         }
       }, 2000)
