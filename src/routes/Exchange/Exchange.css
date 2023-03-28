@@ -1,8 +1,47 @@
 .exchange-container {
-  background-color: blue;
+  background-color: #c8b45c;
 }
 
 .phone-top-bar-app.phone-top-bar {
   left: 5.5em;
   top: -.5em;
+}
+
+.exchange-container h2 {
+  margin-top: 1.5em;
+  font-size: 3em;
+  font-weight: 100;
+  margin-left: 1.4em;
+}
+
+.first-coin,
+.second-coin {
+  background-color: rgba(255, 255, 255, .25);
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.first-coin .coin-symbol {
+  margin-left: .5em;
+}
+
+.first-coin input,
+.second-coin input {
+  outline: none;
+  border: 0;
+  padding: .5em 1em;
+  margin-left: 1em;
+}
+
+.first-coin input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #544e34;
+}
+
+.coin-symbol {
+  color: #544e34;
+  font-size: 1.5em;
+  font-weight: 700;
 }

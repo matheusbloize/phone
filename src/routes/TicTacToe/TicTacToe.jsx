@@ -7,9 +7,12 @@ import PhoneTopBar from "../../components/Phone/PhoneTopBar/PhoneTopBar"
 
 // Hooks
 import { useState } from "react"
+import { useColor } from "../../hooks/useColor"
 
 const TicTacToe = () => {
   const [winner, setWinner] = useState()
+
+  useColor()
 
   return (
     <div className="app-main-page tictactoe-container">

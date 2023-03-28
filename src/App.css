@@ -30,23 +30,23 @@
 
 @keyframes appClicked {
   0% {scale: 1}
-  50%{scale: .5}
-  75%{scale: 1}
-  100%{scale: 2.5}
+  50% {scale: .5}
+  75% {scale: 1}
+  100% {scale: 2.5}
 }
 
 @keyframes returnHome {
   0% {scale: 1;}
-  10%{scale: .9}
-  20%{scale: .8}
-  30%{scale: .7}
-  40%{scale: .6}
-  50%{scale: .5}
-  60%{scale: .4}
-  70%{scale: .3}
-  80%{scale: .2}
-  90%{scale: .1}
-  100%{scale: 0}
+  10% {scale: .9}
+  20% {scale: .8}
+  30% {scale: .7}
+  40% {scale: .6}
+  50% {scale: .5}
+  60% {scale: .4}
+  70% {scale: .3}
+  80% {scale: .2}
+  90% {scale: .1}
+  100% {scale: 0}
 }
 
 .return-button {

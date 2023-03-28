@@ -8,7 +8,8 @@ import PhoneTop from "../../components/Phone/PhoneTop/PhoneTop"
 import PhoneTopBar from "../../components/Phone/PhoneTopBar/PhoneTopBar"
 
 // Hooks
-import { useState, useRef } from "react"
+import { useState, useRef} from "react"
+import { useColor } from "../../hooks/useColor"
 
 const URL = import.meta.env.VITE_API_KEY
 const apiURL = "https://api.openweathermap.org/data/2.5/weather?q="
@@ -24,6 +25,8 @@ const Weather = () => {
   const [wind, setWind] = useState(0)
   const inputRef = useRef()
   const divRef = useRef()
+
+  useColor()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -77,24 +80,24 @@ const Weather = () => {
           </div>
           {city ? (
             <div className="weather-app-container-main">
-            {country && <h3>{city}, {country}</h3>}
-            {temp && <span>{temp}°C</span>}
-            {icon && <img src={`http://openweathermap.org/img/wn/${icon}@4x.png`} alt={alt} />}
-            <div className="wind-humidity">
-              {wind && (
-                <div className="wind">
-                  <img src={windImg} alt="Wind" />
-                  <span>{wind}</span>
-                </div>
-              )}
-              {humidity && (
-                <div className="humidity">
-                  <img src={humidityImg} alt="Humidity" />
-                  <span>{humidity}</span>
-                </div>
-              )}
+              {country && <h3>{city}, {country}</h3>}
+              {temp && <span>{temp}°C</span>}
+              {icon && <img src={`http://openweathermap.org/img/wn/${icon}@4x.png`} alt={alt} />}
+              <div className="wind-humidity">
+                {wind && (
+                  <div className="wind">
+                    <img src={windImg} alt="Wind" />
+                    <span>{wind}</span>
+                  </div>
+                )}
+                {humidity && (
+                  <div className="humidity">
+                    <img src={humidityImg} alt="Humidity" />
+                    <span>{humidity}</span>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
           ) : (
             <p>No city searched</p>
           )}

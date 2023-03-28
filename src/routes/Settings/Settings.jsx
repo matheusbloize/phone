@@ -16,9 +16,16 @@ import { BackgroundImageContext } from "../../context/BackgroundImageContext"
 
 const Settings = () => {
   const divBgRef = useRef()
+  const settingsAppRef = useRef()
 
   const { changeMode, mode } = useContext(ModeContext)
   const { border, changeBorder } = useContext(BackgroundImageContext)
+
+  useEffect(() => {
+    setTimeout(() => {
+      settingsAppRef.current.style.display = "block"
+    }, 1000)
+  }, [])
 
   useEffect(() => {
     changeMode(mode)
@@ -62,7 +69,7 @@ const Settings = () => {
       <PhoneTop />
       <PhoneTopBar addClass="phone-top-bar-app" />
       <h2>Settings</h2>
-      <div className="settings-app">
+      <div ref={settingsAppRef} className="settings-app">
         <div className="settings-app-bg">
           <p>Change Background:</p>
           <div ref={divBgRef} onClick={(e) => changeBackground(e.target)} className="background-options">

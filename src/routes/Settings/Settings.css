@@ -2,14 +2,6 @@
   background-color: #ffffde;
 }
 
-.settings-container .phone-clock {
-  color: #333;
-}
-
-.settings-container .phone-itens svg {
-  color: #333;
-}
-
 .settings-container h2 {
   margin-top: 1.5em;
   font-size: 3em;
@@ -21,6 +13,7 @@
   font-weight: 700;
   color: #333;
   margin-left: .5em;
+  display: none;
 }
 
 .settings-app p {

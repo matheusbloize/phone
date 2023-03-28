@@ -18,8 +18,14 @@
   border-bottom-right-radius: 2em;
 }
 
+@keyframes blinking {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 .calculator-app-result {
-  height: 4.6em;
+  height: 1.45em;
   font-size: 2em;
   font-weight: 700;
   display: flex;
@@ -27,7 +33,7 @@
 }
 
 .calculator-app-keys {
-  margin-top: -4.6em;
+  margin-top: 1.7em;
   height: 26em;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
