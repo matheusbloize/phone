@@ -9,7 +9,7 @@ import Weather from './routes/Weather/Weather'
 import Camera from './routes/Camera/Camera'
 import Todo from './routes/Todo/Todo'
 import Calculator from './routes/Calculator/Calculator'
-import Exchange from './routes/Exchange/Exchange'
+import Memory from './routes/Memory/Memory'
 import Settings from './routes/Settings/Settings'
 import TicTacToe from './routes/TicTacToe/TicTacToe'
 import Clock from './routes/Clock/Clock'
@@ -39,8 +39,8 @@ const router = createBrowserRouter([
         element: <Calculator />
       },
       {
-        path: "/exchange",
-        element: <Exchange />
+        path: "/memory",
+        element: <Memory />
       },
       {
         path: "/settings",

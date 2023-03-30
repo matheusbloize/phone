@@ -4,7 +4,7 @@ import weather from "../../../assets/images/weather.png"
 import calculator from "../../../assets/images/calculator.png"
 import camera from "../../../assets/images/camera.png"
 import clock from "../../../assets/images/clock.png"
-import exchange from "../../../assets/images/exchange.png"
+import memory from "../../../assets/images/memory.png"
 import settings from "../../../assets/images/settings.png"
 import todo from "../../../assets/images/todo.png"
 import tictactoe from "../../../assets/images/tictactoe.png"
@@ -18,6 +18,9 @@ const PhoneApps = () => {
   const phoneRef = useRef()
 
   const slowNavigate = (app) => {
+    if(app.tagName === "DIV") {
+      app = app.children[0]
+    }
     document.querySelector(".return-button").style.display = "none"
     if(app.src !== undefined) {
       let newPathName
@@ -80,11 +83,11 @@ const PhoneApps = () => {
             </div>
             <p>To Do</p>
           </div>
-          <div onClick={(e) => slowNavigate(e.target)} to="/exchange" className="exchange">
+          <div onClick={(e) => slowNavigate(e.target)} to="/memory" className="memory">
             <div className="app">
-              <img src={exchange} alt="Exchange App" />
+              <img src={memory} alt="Memory App" />
             </div>
-            <p>Exchange</p>
+            <p>Memory</p>
           </div>
           <div onClick={(e) => slowNavigate(e.target)} to="/tictactoe" className="tictactoe">
             <div className="app">

@@ -8,7 +8,7 @@ import PhoneTop from "../../components/Phone/PhoneTop/PhoneTop"
 import PhoneTopBar from "../../components/Phone/PhoneTopBar/PhoneTopBar"
 
 // Hooks
-import { useState, useRef} from "react"
+import { useState, useRef } from "react"
 import { useColor } from "../../hooks/useColor"
 
 const URL = import.meta.env.VITE_API_KEY
@@ -48,7 +48,23 @@ const Weather = () => {
       setIcon(data.weather[0].icon)
       setAlt(data.weather[0].main)
       setWind(data.wind.speed)
-      divRef.current.style.height = "32.6em"
+      const loadingMessage = document.createElement("p")
+      loadingMessage.classList.add("weather-loading-message")
+      loadingMessage.innerText = "Loading..."
+      divRef.current.appendChild(loadingMessage)
+      if (document.querySelector(".weather-app-container-main") === null) {
+        setTimeout(() => {
+          divRef.current.style.height = "32.6em"
+          divRef.current.children[2].style.display = "flex"
+          for (let i = 0; i < document.querySelectorAll(".weather-loading-message").length + 1; i++) {
+            document.querySelectorAll(".weather-loading-message")[i].parentElement.removeChild(document.querySelectorAll(".weather-loading-message")[i])
+          }
+        }, 2000)
+      } else {
+        for (let i = 0; i < document.querySelectorAll(".weather-loading-message").length + 1; i++) {
+          document.querySelectorAll(".weather-loading-message")[i].parentElement.removeChild(document.querySelectorAll(".weather-loading-message")[i])
+        }
+      }
     } catch (error) {
       console.log(error)
       divRef.current.style.height = ""
@@ -99,7 +115,7 @@ const Weather = () => {
               </div>
             </div>
           ) : (
-            <p>No city searched</p>
+            <p className="no-searched-message">No city searched</p>
           )}
         </div>
       </div>

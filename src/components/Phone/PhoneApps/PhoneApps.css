@@ -44,7 +44,7 @@
 .todo,
 .weather,
 .tictactoe,
-.exchange {
+.memory {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +58,7 @@
 .todo p,
 .weather p,
 .tictactoe p,
-.exchange p {
+.memory p {
   font-size: .9em;
   color: #FFFDD0;
   font-weight: 700;

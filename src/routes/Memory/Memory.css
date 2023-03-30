@@ -1,0 +1,100 @@
+.memory-container {
+  background-color: #c8b45c;
+}
+
+.phone-top-bar-app.phone-top-bar {
+  left: 5.5em;
+  top: -.5em;
+}
+
+.memory-container h2 {
+  margin-top: 1.5em;
+  font-size: 3em;
+  font-weight: 100;
+  margin-left: 1.8em;
+}
+
+.memory-app {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  background: #242424;
+}
+
+.memory-app::after {
+  content: "";
+  background: #242424;
+  width: 100%;
+  height: 4.85em;
+}
+
+.memory-cards {
+  height: 46%;
+  background-color: #242424;
+  position: relative;
+  border: 5px solid transparent;
+}
+
+.memory-cards img {
+  width: 100%;
+  cursor: pointer;
+  transition: .5s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.memory-cards img:nth-child(1) {
+  border: 1px solid #fff;
+}
+
+.memory-cards img:nth-child(2) {
+  border: 1px solid #fff;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@keyframes smooth-margin-message {
+  0% {
+    margin-top: 0em;
+  }
+  100% {
+    margin-top: 4em;
+  }
+}
+
+.memory-win-message {
+  font-size: .85em;
+  font-weight: 700;
+  color: #242424;
+  text-align: center;
+  margin-top: 4em;
+  display: none;
+  animation: smooth-margin-message .5s ease;
+}
+
+@keyframes smooth-margin-button {
+  0% {
+    margin-top: 0em;
+  }
+  100% {
+    margin-top: 1em;
+  }
+}
+
+.memory-reset-button {
+  margin-left: 12em;
+  margin-top: 1em;
+  padding: .5em 1em;
+  border: none;
+  border-radius: .5em;
+  color: #c8b45c;
+  cursor: pointer;
+  transition: .5s ease;
+  display: none;
+  animation: smooth-margin-button .5s ease;
+}
+
+.memory-reset-button:hover {
+  background-color: #333;
+}

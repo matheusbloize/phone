@@ -63,7 +63,7 @@
 }
 
 .weather-app-container-main {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
 }
