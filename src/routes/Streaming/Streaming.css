@@ -1,0 +1,22 @@
+.streaming-container {
+  background-color: #1a1919;
+}
+
+.streaming-app {
+  background-color: #1a1919;
+  width: 23em;
+  height: 41.7em;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  overflow: hidden;
+}
+
+.streaming-app iframe {
+  height: 100%;
+  width: 112%;
+  overflow: auto;
+  border-top-left-radius: 0.2em;
+  border-top-right-radius: 0.2em;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+}

@@ -12,7 +12,7 @@ import Calculator from './routes/Calculator/Calculator'
 import Memory from './routes/Memory/Memory'
 import Settings from './routes/Settings/Settings'
 import TicTacToe from './routes/TicTacToe/TicTacToe'
-import Clock from './routes/Clock/Clock'
+import Streaming from './routes/Streaming/Streaming'
 import { ModeProvider } from './context/ModeContext'
 import { BackgroundImageProvider } from './context/BackgroundImageContext'
 
@@ -51,8 +51,8 @@ const router = createBrowserRouter([
         element: <TicTacToe />
       },
       {
-        path: "/clock",
-        element: <Clock />
+        path: "/streaming",
+        element: <Streaming />
       },
     ]
   }

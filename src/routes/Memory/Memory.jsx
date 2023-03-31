@@ -73,7 +73,7 @@ const Memory = () => {
   useEffect(() => {
     if (card1 !== undefined && card2 !== undefined) {
       for (let i = 0; i < divRef.current.children.length; i++) {
-        if (divRef.current.children[i].getAttribute("card-flipped") === "false") {
+        if (divRef.current.children[i].children[0].getAttribute("card-flipped") === "false" || divRef.current.children[i].children[1].getAttribute("card-flipped") === "false") {
           divRef.current.children[i].style.pointerEvents = "none"
         }
       }
@@ -81,7 +81,7 @@ const Memory = () => {
         for (let i = 0; i < divRef.current.children.length; i++) {
           divRef.current.children[i].style.pointerEvents = "auto"
         }
-      }, 900)
+      }, 950)
     }
     if (card1 !== undefined && card2 !== undefined && card1.getAttribute("id") === card2.getAttribute("id")) {
       setCard1()
@@ -121,18 +121,18 @@ const Memory = () => {
         setCard2(e.parentElement)
         e.parentElement.setAttribute("card-flipped", "true")
         if (
-          divRef.current.children[0].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[1].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[2].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[3].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[4].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[5].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[6].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[7].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[8].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[9].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[10].getAttribute("card-flipped") === "true" &&
-          divRef.current.children[11].getAttribute("card-flipped") === "true"
+          divRef.current.children[0].children[0].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[0].children[1].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[1].children[0].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[1].children[1].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[2].children[0].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[2].children[1].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[3].children[0].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[3].children[1].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[4].children[0].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[4].children[1].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[5].children[0].getAttribute("card-flipped") === "true" &&
+          divRef.current.children[5].children[1].getAttribute("card-flipped") === "true"
         ) {
           setTimeout(() => {
             winMessageRef.current.style.display = "block"
@@ -152,9 +152,14 @@ const Memory = () => {
     setCard1()
     setCard2()
     for (let i = 0; i < divRef.current.children.length; i++) {
-      divRef.current.children[i].setAttribute("card-flipped", "false")
-      divRef.current.children[i].children[0].style.transform = "scaleX(1)"
-      divRef.current.children[i].children[1].style.display = "none"
+      divRef.current.children[i].children[0].setAttribute("card-flipped", "false")
+      divRef.current.children[i].children[1].setAttribute("card-flipped", "false")
+      divRef.current.children[i].children[0].children[0].style.transform = "scaleX(1)"
+      divRef.current.children[i].children[1].children[0].style.transform = "scaleX(1)"
+      divRef.current.children[i].children[0].children[0].style.borderColor = "#fff"
+      divRef.current.children[i].children[1].children[0].style.borderColor = "#fff"
+      divRef.current.children[i].children[0].children[1].style.display = "none"
+      divRef.current.children[i].children[1].children[1].style.display = "none"
     }
     winMessageRef.current.style.display = "none"
     resetButtonRef.current.style.display = "none"
@@ -181,7 +186,7 @@ const Memory = () => {
         ))
         }
       </div>
-      <div ref={winMessageRef} className="memory-win-message">Congrats, you win the memory game! <br />If you want to play again, press the Reset Button</div>
+      <div ref={winMessageRef} className="memory-win-message">Congrats, you win the memory game! <br />If you want to play again, press the button below.</div>
       <button ref={resetButtonRef} onClick={resetMemoryGame} className="memory-reset-button">Reset</button>
     </div >
   )

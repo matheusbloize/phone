@@ -3,7 +3,7 @@ import "./PhoneApps.css"
 import weather from "../../../assets/images/weather.png"
 import calculator from "../../../assets/images/calculator.png"
 import camera from "../../../assets/images/camera.png"
-import clock from "../../../assets/images/clock.png"
+import streaming from "../../../assets/images/streaming.png"
 import memory from "../../../assets/images/memory.png"
 import settings from "../../../assets/images/settings.png"
 import todo from "../../../assets/images/todo.png"
@@ -115,11 +115,11 @@ const PhoneApps = () => {
             </div>
             <p>Settings</p>
           </div>
-          <div onClick={(e) => slowNavigate(e.target)} to="/clock" className="clock">
+          <div onClick={(e) => slowNavigate(e.target)} to="/streaming" className="streaming">
             <div className="app">
-              <img src={clock} alt="Clock App" />
+              <img src={streaming} alt="Streaming App" style={{borderRadius: ".5em"}} />
             </div>
-            <p>Clock</p>
+            <p>Streaming</p>
           </div>
         </div>
       </div>

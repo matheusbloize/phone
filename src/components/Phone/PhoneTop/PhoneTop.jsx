@@ -13,7 +13,7 @@ const PhoneTop = ({addClass}) => {
         <div className={`phone-clock ${addClass}`}>
           <PhoneClock />
         </div>
-        <div className="phone-itens">
+        <div className="phone-items">
           <BsBarChartFill />
           <IoIosWifi />
           <BsBatteryFull />

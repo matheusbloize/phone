@@ -13,19 +13,19 @@
   user-select: none;
 }
 
-.phone-itens {
+.phone-items {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 1em;
 }
 
-.phone-itens svg {
+.phone-items svg {
   margin-right: .2em;
   font-size: 1.2em;
   color: #FFFDD0;
 }
 
-.phone-itens svg:nth-child(1) {
+.phone-items svg:nth-child(1) {
   font-size: 1em;
 }

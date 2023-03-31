@@ -19,8 +19,24 @@ const Calculator = () => {
   const [render, setRender] = useState()
   const keysRef = useRef()
   const resultRef = useRef()
+  const equalRef = useRef()
+
+  let regex = new RegExp(/[0-9]$/)
 
   useColor()
+
+  useEffect(() => {
+    if(num1 !== undefined) {
+      if(isNaN(num1)) {
+        setView("0")
+        setNum1("0")
+        setNum2()
+        setProp()
+        return
+      }
+
+    }
+  }, [view])
 
   const keyCliked = (e) => {
     if (e.className !== "calculator-app-keys") {
@@ -48,7 +64,6 @@ const Calculator = () => {
             setView((num1) + prop + (num2 + e.innerText))
           }
         }
-
       }
       if (e.getAttribute("calc-prop") === "true") {
         if (num1 !== undefined && prop !== undefined && num2 !== undefined) {
@@ -92,40 +107,64 @@ const Calculator = () => {
         }
       }
       if (e.innerText === "↵") {
-        if (prop !== undefined) {
-          console.log(view, "view")
-          console.log(num2.length)
-          console.log(typeof num2)
+        if (prop !== undefined && num2 !== undefined) {
           let newN2 = num2.split("")
           let removedNumber = newN2.pop()
-          console.log(view[view.length - 1])
-          console.log(view.replace(view[view.length - 1], ""))
-          setView(view.replace(view[view.length - 1], ""))
+          if (equalRef.current.getAttribute("was-used") === "true") {
+            setNum1(view.toString().replace(regex, ""))
+            setNum2()
+          }
+          setView(view.toString().replace(regex, ""))
           setNum2(newN2.join(""))
         } else {
-          setView(view.replace(view[view.length - 1], ""))
-          setNum1(view.replace(view[view.length - 1], ""))
+          if (prop == undefined && num2 == undefined) {
+            setView(view.toString().replace(regex, ""))
+            setNum1(view.toString().replace(regex, ""))
+          } else {
+            setView(view.toString().replace(view[view.length - 1], ""))
+            setNum1(view.replace(view[view.length - 1], ""))
+          }
         }
-        console.log(num1, "num1")
-        console.log(num2, "num2")
       }
-      if (e.innerText === "=" && num1 !== undefined && prop !== undefined && num2 !== undefined) {
-        console.log(`num1:${num1} prop:${prop} num2:${num2}`)
-        switch (prop) {
-          case "+":
-            setView(parseFloat(num1) + parseFloat(num2))
-            break;
-          case "-":
-            setView(parseFloat(num1) - parseFloat(num2))
-            break;
-          case "/":
-            setView(parseFloat(num1) / parseFloat(num2))
-            break;
-          case "x":
-            setView(parseFloat(num1) * parseFloat(num2))
-            break;
-          default:
-            break;
+      if (e.innerText === "=") {
+        if (num1 == "" || num2 == "") {
+          resultRef.current.style.animation = ""
+          setView("")
+          setNum1()
+          setNum2()
+          setProp()
+          return
+        }
+        if (num1 !== undefined && prop !== undefined && num2 !== undefined) {
+          switch (prop) {
+            case "+":
+              setView(parseFloat(num1) + parseFloat(num2))
+              setNum1(parseFloat(num1) + parseFloat(num2))
+              setNum2()
+              setProp()
+              break;
+            case "-":
+              setView(parseFloat(num1) - parseFloat(num2))
+              setNum1(parseFloat(num1) - parseFloat(num2))
+              setNum2()
+              setProp()
+              break;
+            case "/":
+              setView(parseFloat(num1) / parseFloat(num2))
+              setNum1(parseFloat(num1) / parseFloat(num2))
+              setNum2()
+              setProp()
+              break;
+            case "x":
+              setView(parseFloat(num1) * parseFloat(num2))
+              setNum1(parseFloat(num1) * parseFloat(num2))
+              setNum2()
+              setProp()
+              break;
+            default:
+              break;
+          }
+          equalRef.current.setAttribute("was-used", "true")
         }
       }
     }
@@ -156,7 +195,7 @@ const Calculator = () => {
           <div calc-number="true">1</div>
           <div calc-number="true">2</div>
           <div calc-number="true">3</div>
-          <div className="grid-equal span-border-right">=</div>
+          <div ref={equalRef} was-used="false" className="grid-equal span-border-right">=</div>
           <div calc-number="true" className="grid-zero span-border-left">0</div>
           <div>,</div>
         </div>

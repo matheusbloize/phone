@@ -7,14 +7,14 @@ export const useColor = () => {
     useEffect(() => {
       if (mode === "dark") {
         document.querySelector(".phone-clock-app").style.color = "#333"
-        document.querySelectorAll(".phone-itens svg")[3].style.color = "#333"
-        document.querySelectorAll(".phone-itens svg")[4].style.color = "#333"
-        document.querySelectorAll(".phone-itens svg")[5].style.color = "#333"
+        document.querySelectorAll(".phone-items svg")[3].style.color = "#333"
+        document.querySelectorAll(".phone-items svg")[4].style.color = "#333"
+        document.querySelectorAll(".phone-items svg")[5].style.color = "#333"
       } else {
         document.querySelector(".phone-clock-app").style.color = "#FFFDD0"
-        document.querySelectorAll(".phone-itens svg")[3].style.color = "#FFFDD0"
-        document.querySelectorAll(".phone-itens svg")[4].style.color = "#FFFDD0"
-        document.querySelectorAll(".phone-itens svg")[5].style.color = "#FFFDD0"
+        document.querySelectorAll(".phone-items svg")[3].style.color = "#FFFDD0"
+        document.querySelectorAll(".phone-items svg")[4].style.color = "#FFFDD0"
+        document.querySelectorAll(".phone-items svg")[5].style.color = "#FFFDD0"
       }
     }, [])
 }

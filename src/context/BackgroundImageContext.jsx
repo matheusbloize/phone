@@ -9,15 +9,27 @@ export const BackgroundImageProvider = ({ children }) => {
     switch (bg) {
       case "1":
         setBorder(1)
-        document.querySelector(".phone-inside-container").style.backgroundImage = `url('../src/assets/images/background1.jpg')`
+        if(location.hostname === "localhost") {
+          document.querySelector(".phone-inside-container").style.backgroundImage = `url('../src/assets/images/background1.jpg')`
+        } else {
+          document.querySelector(".phone-inside-container").style.backgroundImage = `url('../src/assets/images/background1-04c80947.jpg')`
+        }
         break
       case "2":
         setBorder(2)
-        document.querySelector(".phone-inside-container").style.backgroundImage = `url('../src/assets/images/background2.jpg')`
+        if(location.hostname === "localhost") {
+          document.querySelector(".phone-inside-container").style.backgroundImage = `url('../src/assets/images/background2.jpg')`
+        } else {
+          document.querySelector(".phone-inside-container").style.backgroundImage = `url('../src/assets/images/background2-63904891.jpg')`
+        }
         break
       case "3":
         setBorder(3)
-        document.querySelector(".phone-inside-container").style.backgroundImage = `url('../src/assets/images/background3.jpg')`
+        if(location.hostname === "localhost") {
+          document.querySelector(".phone-inside-container").style.backgroundImage = `url('../src/assets/images/background3.jpg')`
+        } else {
+          document.querySelector(".phone-inside-container").style.backgroundImage = `url('../src/assets/images/background3-96b3052d.jpg')`
+        }
         break
       default:
         break

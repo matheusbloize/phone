@@ -38,7 +38,7 @@
 }
 
 .camera,
-.clock,
+.streaming,
 .calculator,
 .settings,
 .todo,
@@ -52,7 +52,7 @@
 }
 
 .camera p,
-.clock p,
+.streaming p,
 .calculator p,
 .settings p,
 .todo p,
