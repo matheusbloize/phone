@@ -22,6 +22,7 @@ const PhoneApps = () => {
       app = app.children[0]
     }
     document.querySelector(".return-button").style.display = "none"
+    document.body.style.pointerEvents = "none"
     if(app.src !== undefined) {
       let newPathName
       if(location.hostname === "localhost") {
@@ -36,6 +37,7 @@ const PhoneApps = () => {
       setTimeout(() => {
         navigate(`/${newPathName.split(".png").join("")}`)
         document.querySelector(".return-button").style.display = "block"
+        document.body.style.pointerEvents = "all"
         if(phoneRef.current !== "null") {
           setTimeout(() => {
             phoneRef.current.style.display = "flex"
