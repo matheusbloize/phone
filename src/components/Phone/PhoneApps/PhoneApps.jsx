@@ -11,7 +11,7 @@ import tictactoe from "../../../assets/images/tictactoe.png"
 
 // Components
 import { useNavigate } from "react-router-dom"
-import { useRef, useEffect } from "react"
+import { useRef } from "react"
 
 const PhoneApps = () => {
   const navigate = useNavigate()
@@ -47,27 +47,6 @@ const PhoneApps = () => {
       }, 2000)
     }
   }
-  // buttonRef.current.children[1].style.animation = "returnHome 1s ease-in"
-  //   setTimeout(() => {
-  //     buttonRef.current.children[1].style.display = "none"
-  //   }, 950)
-  //   setTimeout(() => {
-  //     navigate("/")
-  //     setTimeout(() => {
-  //       buttonRef.current.children[1].style.animation = ""
-  //     }, 500)
-  //   }, 1000)
-
-  // useEffect(() => {
-  //   const testeMassa = (document.querySelector(".swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal"))
-  //   if(testeMassa.children[0].classList.contains("swiper-pagination-bullet-active")) {
-  //     document.body.children[0].children[0].children[0].children[1].style.backgroundPosition = "0%"
-  //   } else if (testeMassa.children[1].classList.contains("swiper-pagination-bullet-active")) {
-  //     document.body.children[0].children[0].children[0].children[1].style.backgroundPosition = "50%"
-  //   } else if (testeMassa.children[2].classList.contains("swiper-pagination-bullet-active")) {
-  //     document.body.children[0].children[0].children[0].children[1].style.backgroundPosition = "100%"
-  //   }
-  // }, )
 
   return (
     <>

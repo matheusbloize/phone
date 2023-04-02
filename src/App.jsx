@@ -30,19 +30,6 @@ function App() {
     }
   }
 
-  // console.log(document.querySelector("background-id"))
-  // setTimeout(() => {
-  //   const testeMassa = (document.querySelector(".swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal"))
-  //   console.log(testeMassa)
-  //   if (testeMassa.children[0].classList.contains("swiper-pagination-bullet-active")) {
-  //     document.body.children[0].children[0].children[0].children[1].style.backgroundPosition = "0%"
-  //   } else if (testeMassa.children[1].classList.contains("swiper-pagination-bullet-active")) {
-  //     document.body.children[0].children[0].children[0].children[1].style.backgroundPosition = "50%"
-  //   } else if (testeMassa.children[2].classList.contains("swiper-pagination-bullet-active")) {
-  //     document.body.children[0].children[0].children[0].children[1].style.backgroundPosition = "100%"
-  //   }
-  // }, 2000)
-
   return (
     <div className="App">
       <div className="phone">

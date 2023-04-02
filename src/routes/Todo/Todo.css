@@ -100,6 +100,7 @@
   font-size: 2em;
   left: 9em;
   display: none;
+  cursor: pointer;
 }
 
 .todo-task svg {
@@ -119,4 +120,5 @@
 .todo-task-edit {
   flex: 1;
   font-size: 1.5em;
+  cursor: pointer;
 }

@@ -6,7 +6,6 @@ import instagram from "../../../assets/images/instagram.png"
 
 // Components
 
-
 const PhoneBottom = () => {
   return (
     <>

@@ -13,18 +13,27 @@ import { useEffect, useRef, useState } from "react"
 const Todo = () => {
   const [inputTask, setInputTask] = useState("")
   const [newInputTask, setNewInputTask] = useState("")
-  const [tasks] = useState([])
+  let [tasks] = useState([])
   const [render, setRender] = useState(0)
   const formRef = useRef()
 
   useColor()
 
-  // console.log(inputTask)
-  // console.log(tasks)
-
   useEffect(() => {
+    setInputTask("")
+    setNewInputTask("")
     formRef.current.children[0].value = ""
     formRef.current.children[0].focus()
+    const noTasks = document.createElement("p")
+    noTasks.innerText = "No tasks yet."
+    noTasks.style.color = "#fff"
+    noTasks.style.marginTop = "2em"
+    noTasks.classList.add("no-tasks")
+    if (tasks.length === 0) {
+      document.querySelector(".todo-app").appendChild(noTasks)
+    } else if (tasks.length > 0 && document.querySelector(".no-tasks")) {
+      document.querySelector(".no-tasks").parentElement.removeChild(document.querySelector(".no-tasks"))
+    }
   }, [render])
 
   const handleSubmit = (e) => {
@@ -47,23 +56,45 @@ const Todo = () => {
   }
 
   const deleteTask = (e) => {
-    console.log(e.parentElement.parentElement.id)
-    if (e.parentElement.parentElement.id !== "") {
-      e.parentElement.parentElement.parentElement.removeChild(e.parentElement.parentElement)
-    } else {
-      return
+    for (let i = 0; i < tasks.length; i++) {
+      if (e.parentElement.id == tasks[i][1]) {
+        tasks.splice(i, 1)
+      }
     }
+    setRender(render + 1)
   }
 
   const editTask = (e) => {
-    if (e.parentElement.parentElement.id !== "") {
-      console.log("1")
+    const id = e.parentElement.id
+    for (let i = 0; i < document.querySelector(".todo-tasks").children.length; i++) {
+      if (document.querySelector(".todo-tasks").children[i].id === id) {
+        document.querySelectorAll(".todo-task input")[i].style.display = "flex"
+        document.querySelectorAll(".todo-task .todo-task-check")[i].style.display = "flex"
+      }
+    }
+  }
 
-      // e.parentElement.parentElement.querySelector(".todo-task-name").innerText = newInputTask
+  const confirmChanges = (e) => {
+    const id = e.parentElement.id
+    if (document.querySelector(".todo-task input").value === "") {
+      return
+    } else if (newInputTask.length > 18) {
+      document.querySelector(".todo-error").style.display = "block"
+      formRef.current.children[0].value = ""
+      formRef.current.children[0].focus()
+      setTimeout(() => {
+        document.querySelector(".todo-error").style.display = "none"
+      }, 2500)
+      return
     } else {
-      console.log("2")
-
-      // e.parentElement.parentElement.parentElement.querySelector(".todo-task-name").innerText = newInputTask
+      for (let i = 0; i < document.querySelector(".todo-tasks").children.length; i++) {
+        if (document.querySelector(".todo-tasks").children[i].id === id) {
+          tasks[i][0] = newInputTask
+          setRender(render + 1)
+          document.querySelectorAll(".todo-task input")[i].style.display = "none"
+          document.querySelectorAll(".todo-task .todo-task-check")[i].style.display = "none"
+        }
+      }
     }
   }
 
@@ -86,7 +117,7 @@ const Todo = () => {
           <p>Only 18 characters on the task area.</p>
         </div>
         <div className="todo-tasks">
-          {tasks.length > 0 ? (
+          {tasks.length > 0 && (
             (tasks.map((task) => (
               <div key={task[1]} id={task[1]} className="todo-task">
                 <div className="todo-task-name">{task[0]}</div>
@@ -96,17 +127,17 @@ const Todo = () => {
                   value={newInputTask}
                   onChange={(e) => setNewInputTask(e.target.value)}
                 />
-                <BiCheck onClick={(e) => confirmEdit(e.target)} className="todo-task-check"/>
-                <div className="todo-task-delete">
-                  <BiTrash onClick={(e) => deleteTask(e.target)} />
+                <div onClick={(e) => confirmChanges(e.target)} className="todo-task-check">
+                  <BiCheck pointerEvents="none" />
                 </div>
-                <div className="todo-task-edit">
-                  <BiEdit onClick={(e) => editTask(e.target)} />
+                <div onClick={(e) => deleteTask(e.target)} className="todo-task-delete">
+                  <BiTrash pointerEvents="none" />
+                </div>
+                <div onClick={(e) => editTask(e.target)} className="todo-task-edit">
+                  <BiEdit pointerEvents="none" />
                 </div>
               </div>
             )))
-          ) : (
-            <p style={{ color: "#fff", marginTop: "2em" }}>No tasks yet.</p>
           )}
         </div>
       </div>

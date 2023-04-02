@@ -8,9 +8,6 @@ import { Pagination } from "swiper";
 import PhoneApps from "./Phone/PhoneApps/PhoneApps";
 
 function SwiperFn() {
-
-
-
   return (
     <>
       <Swiper allowTouchMove={true} pagination={{ clickable: true }} modules={[Pagination]} className="mySwiper">
