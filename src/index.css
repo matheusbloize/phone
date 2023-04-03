@@ -41,7 +41,7 @@ img {
   height: 43.2em;
   width: 23.3em;
   position: absolute;
-  top: 1em;
+  top: .9em;
   left: .9em;
   z-index: 5;
   border-radius: 2em;
@@ -65,7 +65,19 @@ img {
   .settings-container,
   .tictactoe-container,
   .streaming-container {
-    top: .8em;
+    top: .85em;
+  }
+
+  .phone {
+    scale: .9;
+    margin-top: -2vh;
+  }
+}
+
+@media screen and (max-height: 680px) {
+  .phone {
+    scale: .8;
+    margin-top: -9vh;
   }
 }
 
@@ -80,6 +92,11 @@ img {
   .streaming-container {
     top: .7em;
   }
+
+  .phone {
+    scale: .65;
+    margin-top: -11vh;
+  }
 }
 
 @media screen and (max-height: 540px) {
@@ -91,7 +108,7 @@ img {
   .settings-container,
   .tictactoe-container,
   .streaming-container {
-    top: .6em;
+    top: .55em;
   }
 }
 
@@ -137,5 +154,12 @@ img {
 
   .calculator-app .calculator-app-keys {
     height: 25em;
+  }
+}
+
+@media screen and (max-height: 530px) {
+  .phone {
+    scale: .55;
+    margin-top: -20vh;
   }
 }
