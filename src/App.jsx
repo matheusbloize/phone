@@ -17,6 +17,7 @@ function App() {
 
   const returnHome = () => {
     if(location.pathname !== "/") {
+      document.querySelector(".return-button").style.display = "none"
       buttonRef.current.children[1].style.animation = "returnHome 1s ease-in"
       setTimeout(() => {
         buttonRef.current.children[1].style.display = "none"
@@ -25,6 +26,7 @@ function App() {
         navigate("/")
         setTimeout(() => {
           buttonRef.current.children[1].style.animation = ""
+          document.querySelector(".return-button").style.display = "block"
         }, 500)
       }, 1000)
     }

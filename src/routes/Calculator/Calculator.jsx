@@ -14,9 +14,6 @@ const Calculator = () => {
   const [num1, setNum1] = useState()
   const [num2, setNum2] = useState()
   const [prop, setProp] = useState()
-  const [newNumber1, setNewNumber1] = useState(0)
-  const [newNumber2, setNewNumber2] = useState(0)
-  const [render, setRender] = useState()
   const keysRef = useRef()
   const resultRef = useRef()
   const equalRef = useRef()
@@ -26,15 +23,22 @@ const Calculator = () => {
   useColor()
 
   useEffect(() => {
-    if(num1 !== undefined) {
-      if(isNaN(num1)) {
+    if (num1 !== undefined) {
+      if (isNaN(num1)) {
         setView("0")
         setNum1("0")
         setNum2()
         setProp()
         return
       }
-
+    }
+    if (view.length >= 18) {
+      alert("You've reached the maximum number of characters.")
+      setView("0")
+      setNum1("0")
+      setNum2()
+      setProp()
+      return
     }
   }, [view])
 
@@ -89,7 +93,6 @@ const Calculator = () => {
           }
           setNum2()
           setProp(e.innerText)
-          setRender(1)
         }
         if (num1 !== undefined && prop == undefined) {
           setProp(e.innerText)
@@ -127,7 +130,7 @@ const Calculator = () => {
         }
       }
       if (e.innerText === "=") {
-        if (num1 == "" || num2 == "") {
+        if (num1 === "" || num2 === "") {
           resultRef.current.style.animation = ""
           setView("")
           setNum1()

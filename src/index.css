@@ -13,6 +13,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 .swiper-pagination-bullet {
   background-color: #FFFDD0;
 }
@@ -34,10 +39,10 @@ a {
 
 .app-main-page {
   height: 43.2em;
-  width: 23em;
+  width: 23.3em;
   position: absolute;
   top: 1em;
-  left: 1.01em;
+  left: .9em;
   z-index: 5;
   border-radius: 2em;
 }
@@ -49,4 +54,88 @@ a {
 
 .phone-clock-app.phone-clock {
   margin-top: .5em;
+}
+
+@media screen and (max-height: 800px) {
+  .weather-container,
+  .camera-container,
+  .todo-container,
+  .calculator-container,
+  .memory-container,
+  .settings-container,
+  .tictactoe-container,
+  .streaming-container {
+    top: .8em;
+  }
+}
+
+@media screen and (max-height: 620px) {
+  .weather-container,
+  .camera-container,
+  .todo-container,
+  .calculator-container,
+  .memory-container,
+  .settings-container,
+  .tictactoe-container,
+  .streaming-container {
+    top: .7em;
+  }
+}
+
+@media screen and (max-height: 540px) {
+  .weather-container,
+  .camera-container,
+  .todo-container,
+  .calculator-container,
+  .memory-container,
+  .settings-container,
+  .tictactoe-container,
+  .streaming-container {
+    top: .6em;
+  }
+}
+
+@media screen and (max-height: 440px) {
+  .weather-container,
+  .camera-container,
+  .todo-container,
+  .calculator-container,
+  .memory-container,
+  .settings-container,
+  .tictactoe-container,
+  .streaming-container {
+    top: .5em;
+  }
+}
+
+@media screen and (min-height: 1020px) {
+  .phone-inside-container {
+    margin-top: 1vh;
+    height: 42em;
+  }
+
+  .phone {
+    height: 44em;
+  }
+
+  .app-main-page.weather-container,
+  .app-main-page.camera-container,
+  .app-main-page.todo-container,
+  .app-main-page.calculator-container,
+  .app-main-page.memory-container,
+  .app-main-page.settings-container,
+  .app-main-page.tictactoe-container,
+  .app-main-page.streaming-container {
+    height: 42.5em;
+  }
+
+  .app-main-page {
+    left: .95em;
+    width: 23.1em;
+    top: .7em;
+  }
+
+  .calculator-app .calculator-app-keys {
+    height: 25em;
+  }
 }
