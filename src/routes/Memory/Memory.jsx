@@ -33,15 +33,15 @@ const Memory = () => {
   useEffect(() => {
     if (divRef.current.children[0] !== undefined) {
       divRef.current.children[4].style.display = "flex"
-      divRef.current.children[4].style.width = "11.5em"
+      divRef.current.children[4].style.width = "11.7em"
       divRef.current.children[4].style.height = "6em"
       divRef.current.children[4].style.position = "absolute"
       divRef.current.children[4].style.top = "22em"
       divRef.current.children[5].style.display = "flex"
-      divRef.current.children[5].style.width = "11.5em"
+      divRef.current.children[5].style.width = "11.7em"
       divRef.current.children[5].style.height = "6em"
       divRef.current.children[5].style.position = "absolute"
-      divRef.current.children[5].style.left = "11.5em"
+      divRef.current.children[5].style.left = "11.7em"
       divRef.current.children[5].style.top = "22em"
     }
   }, [divRef.current])
