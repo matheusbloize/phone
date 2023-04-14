@@ -33,15 +33,15 @@ const Memory = () => {
   useEffect(() => {
     if (divRef.current.children[0] !== undefined) {
       divRef.current.children[4].style.display = "flex"
-      divRef.current.children[4].style.width = "11.7em"
+      divRef.current.children[4].style.width = "11.5em"
       divRef.current.children[4].style.height = "6em"
       divRef.current.children[4].style.position = "absolute"
       divRef.current.children[4].style.top = "22em"
       divRef.current.children[5].style.display = "flex"
-      divRef.current.children[5].style.width = "11.7em"
+      divRef.current.children[5].style.width = "11.5em"
       divRef.current.children[5].style.height = "6em"
       divRef.current.children[5].style.position = "absolute"
-      divRef.current.children[5].style.left = "11.7em"
+      divRef.current.children[5].style.left = "11.5em"
       divRef.current.children[5].style.top = "22em"
     }
   }, [divRef.current])
@@ -166,6 +166,12 @@ const Memory = () => {
     shuffleCards()
   }
 
+  const keyUpFn = (e) => {
+    if(e.keyCode === 13) {
+      rotateCard(e.target.children[0])
+    }
+  }
+
   return (
     <div className="app-main-page memory-container">
       <PhoneTop addClass="phone-clock-app" />
@@ -174,11 +180,11 @@ const Memory = () => {
       <div ref={divRef} onClick={(e) => rotateCard(e.target)} className="memory-app">
         {cards && shuffled1 && cards.map((card, index) => (
           <div key={index}>
-            <div id={shuffled1[index]} card-flipped="false" className="memory-cards">
+            <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} id={shuffled1[index]} card-flipped="false" className="memory-cards">
               <img src={question_mark} alt="Question Mark" />
               <img src={cards[shuffled1[index]]} alt={cards[shuffled1[index]].split("/")[cards[0].split("/").length - 1].split(".")[0]} />
             </div>
-            <div id={shuffled2[index]} card-flipped="false" className="memory-cards">
+            <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} id={shuffled2[index]} card-flipped="false" className="memory-cards">
               <img src={question_mark} alt="Question Mark" />
               <img src={cards[shuffled2[index]]} alt={cards[shuffled2[index]].split("/")[cards[0].split("/").length - 1].split(".")[0]} />
             </div>

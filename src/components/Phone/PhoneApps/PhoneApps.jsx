@@ -48,29 +48,35 @@ const PhoneApps = () => {
     }
   }
 
+  const keyUpFn = (e) => {
+    if(e.keyCode === 13) {
+      slowNavigate(e.target.children[0].children[0])
+    }
+  }
+
   return (
     <>
       <div ref={phoneRef} background-id="1" className="phone-inside-center">
         <div className="apps-left">
-          <div onClick={(e) => slowNavigate(e.target)} to="/weather" className="weather">
+          <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} onClick={(e) => slowNavigate(e.target)} to="/weather" className="weather">
             <div className="app">
               <img src={weather} alt="Weather App" />
             </div>
             <p>Weather</p>
           </div>
-          <div onClick={(e) => slowNavigate(e.target)} to="/todo" className="todo">
+          <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} onClick={(e) => slowNavigate(e.target)} to="/todo" className="todo">
             <div className="app">
               <img src={todo} alt="To Do App" />
             </div>
             <p>To Do</p>
           </div>
-          <div onClick={(e) => slowNavigate(e.target)} to="/memory" className="memory">
+          <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} onClick={(e) => slowNavigate(e.target)} to="/memory" className="memory">
             <div className="app">
               <img src={memory} alt="Memory App" />
             </div>
             <p>Memory</p>
           </div>
-          <div onClick={(e) => slowNavigate(e.target)} to="/tictactoe" className="tictactoe">
+          <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} onClick={(e) => slowNavigate(e.target)} to="/tictactoe" className="tictactoe">
             <div className="app">
               <img src={tictactoe} alt="Tic Tac Toe App" />
             </div>
@@ -78,25 +84,25 @@ const PhoneApps = () => {
           </div>
         </div>
         <div className="apps-right">
-          <div onClick={(e) => slowNavigate(e.target)} to="/camera" className="camera">
+          <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} onClick={(e) => slowNavigate(e.target)} to="/camera" className="camera">
             <div className="app">
               <img src={camera} alt="Camera App" />
             </div>
             <p>Camera</p>
           </div>
-          <div onClick={(e) => slowNavigate(e.target)} to="/calculator" className="calculator">
+          <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} onClick={(e) => slowNavigate(e.target)} to="/calculator" className="calculator">
             <div className="app">
               <img src={calculator} alt="Calculator App" />
             </div>
             <p>Calculator</p>
           </div>
-          <div onClick={(e) => slowNavigate(e.target)} to="/settings" className="settings">
+          <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} onClick={(e) => slowNavigate(e.target)} to="/settings" className="settings">
             <div className="app">
               <img src={settings} alt="Settings App" />
             </div>
             <p>Settings</p>
           </div>
-          <div onClick={(e) => slowNavigate(e.target)} to="/streaming" className="streaming">
+          <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} onClick={(e) => slowNavigate(e.target)} to="/streaming" className="streaming">
             <div className="app">
               <img src={streaming} alt="Streaming App" style={{borderRadius: ".5em"}} />
             </div>

@@ -110,21 +110,27 @@ const TicTacToe = () => {
     document.querySelector(".tictactoe-turn").style.display = "flex"
   }
 
+  const keyUpFn = (e) => {
+    if(e.keyCode === 13) {
+      addPlay(e.target)
+    }
+  }
+
   return (
     <div className="app-main-page tictactoe-container">
       <PhoneTop addClass="phone-clock-app" />
       <PhoneTopBar addClass="phone-top-bar-app" />
       <h2>Tic Tac Toe</h2>
       <div ref={divRef} onClick={(e) => addPlay(e.target)} className="tictactoe-app">
-        <div used-area="false" area-id="1" className="tictactoe-area bottom right"></div>
-        <div used-area="false" area-id="2" className="tictactoe-area bottom right"></div>
-        <div used-area="false" area-id="3" className="tictactoe-area bottom"></div>
-        <div used-area="false" area-id="4" className="tictactoe-area bottom right"></div>
-        <div used-area="false" area-id="5" className="tictactoe-area bottom right"></div>
-        <div used-area="false" area-id="6" className="tictactoe-area bottom"></div>
-        <div used-area="false" area-id="7" className="tictactoe-area right"></div>
-        <div used-area="false" area-id="8" className="tictactoe-area right"></div>
-        <div used-area="false" area-id="9" className="tictactoe-area"></div>
+        <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} used-area="false" area-id="1" className="tictactoe-area bottom right"></div>
+        <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} used-area="false" area-id="2" className="tictactoe-area bottom right"></div>
+        <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} used-area="false" area-id="3" className="tictactoe-area bottom"></div>
+        <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} used-area="false" area-id="4" className="tictactoe-area bottom right"></div>
+        <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} used-area="false" area-id="5" className="tictactoe-area bottom right"></div>
+        <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} used-area="false" area-id="6" className="tictactoe-area bottom"></div>
+        <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} used-area="false" area-id="7" className="tictactoe-area right"></div>
+        <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} used-area="false" area-id="8" className="tictactoe-area right"></div>
+        <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} used-area="false" area-id="9" className="tictactoe-area"></div>
       </div>
       <div className="tictactoe-info">
         <div className="tictactoe-turn">

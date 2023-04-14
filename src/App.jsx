@@ -32,6 +32,12 @@ function App() {
     }
   }
 
+  const keyUpFn = (e) => {
+    if(e.keyCode === 13) {
+      returnHome()
+    }
+  }
+
   return (
     <div className="App">
       <div className="phone">
@@ -42,7 +48,7 @@ function App() {
           <SwiperFn />
           <PhoneBottom />
         </div>
-        <div onClick={returnHome} draggable="false" className="return-button"></div>
+        <div tabIndex="0" onKeyUp={(e) => keyUpFn(e)} onClick={returnHome} draggable="false" className="return-button"></div>
       </div>
     </div>
   )

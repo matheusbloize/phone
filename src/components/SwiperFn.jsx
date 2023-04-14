@@ -19,7 +19,7 @@ function SwiperFn() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="phone-inside-center" background-id="3">
-            <a className="easter-egg" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"></a>
+            <a tabIndex="-1" className="easter-egg" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"></a>
           </div>
         </SwiperSlide>
       </Swiper>

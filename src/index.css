@@ -39,10 +39,9 @@ img {
 
 .app-main-page {
   height: 43.3em;
-  width: 23.3em;
+  width: 23em;
   position: absolute;
-  top: .9em;
-  left: .9em;
+  top: 1.02em;
   z-index: 5;
   border-radius: 2em;
 }
