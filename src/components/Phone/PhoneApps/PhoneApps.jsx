@@ -18,6 +18,7 @@ const PhoneApps = () => {
   const phoneRef = useRef()
 
   const slowNavigate = (app) => {
+    if(app.tagName === "P") return
     if(app.tagName === "DIV") {
       app = app.children[0]
     }
