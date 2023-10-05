@@ -1,6 +1,6 @@
 # Phone
 
-A project to create simple logic games in the same place
+A project to create simple games and learn new features in one place
 
 ## 💻 Tech Stack:
 
